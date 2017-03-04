@@ -39,6 +39,7 @@ def parse_args():
 
     return parser.parse_args()
 
+
 def clone_repos(projects, destination):
     """
     Clones the Repositories to the destination directory
@@ -51,7 +52,7 @@ def clone_repos(projects, destination):
         sys.exit(1)
 
     cwd = os.getcwd()  # Remember the current working directory
-    
+
     for project in projects:
 
         os.chdir(destination)
