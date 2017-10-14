@@ -47,6 +47,8 @@ def clone_repos(projects, destination):
     Clones the Repositories to the destination directory
     """
 
+    destination = os.path.abspath(destination)
+
     if not os.path.exists(destination):
         os.makedirs(destination)
     if not os.path.isdir(destination):
