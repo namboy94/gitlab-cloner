@@ -18,7 +18,7 @@ way of automated gitlab builds.
 **Style**
 
 We feel that a unified coding style is important, which is why we require a linter to
-be used. In this case **pep8** is used. Code must pass pep8's default tests.
+be used. In this case **pycodestyle** is used. Code must pass pycodestyle's default tests.
 
 **Documentation**
 

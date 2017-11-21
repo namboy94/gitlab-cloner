@@ -1,6 +1,6 @@
 # Gitlab Cloner [![build status](https://gitlab.namibsun.net/namboy94/gitlab-cloner/badges/master/build.svg)](https://gitlab.namibsun.net/namboy94/gitlab-cloner/commits/master)
 
-![Logo](logo/logo-readme.png "Logo")
+![Logo](resources/logo/logo-readme.png "Logo")
 
 This is a small script that clones all git repositories of a user from a
 Gitlab server.
@@ -15,10 +15,12 @@ one should be the API key.
 You can also specify a destination directory for the repositories
 with the ```-d``` argument.
 
-To include any achived repositories, use the ```-a``` option
+To include any archived repositories, use the ```-a``` option
 
-## Links
+## Further Information
 
+* [Changelog](https://gitlab.namibsun.net/namboy94/gitlab-cloner/raw/master/CHANGELOG)
+* [License (GPLv3)](https://gitlab.namibsun.net/namboy94/gitlab-cloner/raw/master/LICENSE)
 * [Github](https://github.com/namboy94/gitlab-cloner)
 * [Gitlab](https://gitlab.namibsun.net/namboy94/gitlab-cloner)
 * [Git Statistics (gitstats)](https://gitstats.namibsun.net/gitstats/gitlab-cloner/index.html)
