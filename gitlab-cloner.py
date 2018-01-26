@@ -33,6 +33,7 @@ def parse_args():
 
     parser = argparse.ArgumentParser()
     parser.add_argument("url", help="The Gitlab URL")
+    parser.add_argument("user", help="The Gitlab user")
     parser.add_argument("token", help="The Gitlab API Token")
     parser.add_argument("-a", "--archived", default=False, action="store_true",
                         help="Includes archived repositories")
@@ -85,7 +86,7 @@ def clone_repos(projects, destination):
     os.chdir(cwd)  # Return to original working directory
 
 
-def get_repositories(gitlab_url, api_key, archived):
+def get_repositories(gitlab_url, user, api_key, archived):
     """
     Fetches the repository information from the gitlab API.
     Requires a valid Gitlab URL, the user's access token.
@@ -96,24 +97,34 @@ def get_repositories(gitlab_url, api_key, archived):
     if not gitlab_url.endswith("/"):
         gitlab_url += "/"
 
-    query = gitlab_url + "api/v4/projects?private_token=" + api_key
+    query = gitlab_url + "api/v4/users/" + user + "/projects"
+    query += "?private_token=" + api_key
+
+    if archived:
+        query += "&archived=true"
+
     result = requests.get(query)
+    projects = []
 
-    if result.status_code != 200:  # If unauthorized or other error, stop.
-        print(result.text)
-        sys.exit(1)
+    count = 1
+    more_pages = True
+    while more_pages:
 
-    else:
+        more_pages = result.headers["X-Next-Page"] != ""
 
-        projects = json.loads(result.text)
-        if archived:
-            projects += json.loads(requests.get(query + "&archived=true").text)
+        if result.status_code != 200:  # If unauthorized or other error, stop.
+            print(result.text)
+            sys.exit(1)
+        else:
+            projects += json.loads(result.text)
+            count += 1
+            result = requests.get(query + "&page=" + str(count))
 
-        return projects
+    return projects
 
 
 if __name__ == "__main__":
 
     args = parse_args()
-    projects = get_repositories(args.url, args.token, args.archived)
+    projects = get_repositories(args.url, args.user, args.token, args.archived)
     clone_repos(projects, args.destination)
