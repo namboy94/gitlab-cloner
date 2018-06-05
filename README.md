@@ -1,4 +1,6 @@
-# Gitlab Cloner [![build status](https://gitlab.namibsun.net/namboy94/gitlab-cloner/badges/master/build.svg)](https://gitlab.namibsun.net/namboy94/gitlab-cloner/commits/master)
+# Gitlab Cloner
+
+[![build status](https://gitlab.namibsun.net/namibsun/python/gitlab-cloner/badges/master/build.svg)](https://gitlab.namibsun.net/namibsun/python/gitlab-cloner/commits/master)
 
 ![Logo](resources/logo/logo-readme.png "Logo")
 
@@ -19,9 +21,9 @@ To include any archived repositories, use the ```-a``` option
 
 ## Further Information
 
-* [Changelog](https://gitlab.namibsun.net/namboy94/gitlab-cloner/raw/master/CHANGELOG)
-* [License (GPLv3)](https://gitlab.namibsun.net/namboy94/gitlab-cloner/raw/master/LICENSE)
+* [Changelog](CHANGELOG)
+* [License (GPLv3)](LICENSE)
+* [Gitlab](https://gitlab.namibsun.net/namibsun/python/gitlab-cloner)
 * [Github](https://github.com/namboy94/gitlab-cloner)
-* [Gitlab](https://gitlab.namibsun.net/namboy94/gitlab-cloner)
-* [Git Statistics (gitstats)](https://gitstats.namibsun.net/gitstats/gitlab-cloner/index.html)
-* [Git Statistics (git_stats)](https://gitstats.namibsun.net/git_stats/gitlab-cloner/index.html)
+* [Progstats](https://progstats.namibsun.net/projects/gitlab-cloner)
+* [PyPi](https://pypi.org/project/gitlab-cloner)

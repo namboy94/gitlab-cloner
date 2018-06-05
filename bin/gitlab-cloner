@@ -1,20 +1,22 @@
-#!/usr/bin/env python
-"""
-Copyright Hermann Krumrey <hermann@krumreyh.com>, 2017
+#!/usr/bin/env python3
+"""LICENSE
+Copyright 2017 Hermann Krumrey <hermann@krumreyh.com>
 
-This program is free software: you can redistribute it and/or modify
+This file is part of gitlab-cloner.
+
+gitlab-cloner is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
+gitlab-cloner is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-"""
+along with gitlab-cloner.  If not, see <http://www.gnu.org/licenses/>.
+LICENSE"""
 
 from __future__ import print_function
 
@@ -24,6 +26,16 @@ import json
 import argparse
 import requests
 from subprocess import Popen, PIPE
+
+
+def main():
+    """
+    The main function of this script
+    :return: None
+    """
+    args = parse_args()
+    projects = get_repositories(args.url, args.user, args.token, args.archived)
+    clone_repos(projects, args.destination)
 
 
 def parse_args():
@@ -124,7 +136,4 @@ def get_repositories(gitlab_url, user, api_key, archived):
 
 
 if __name__ == "__main__":
-
-    args = parse_args()
-    projects = get_repositories(args.url, args.user, args.token, args.archived)
-    clone_repos(projects, args.destination)
+    main()

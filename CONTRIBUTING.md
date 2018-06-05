@@ -1,4 +1,4 @@
-# Contributing to gitlab-cloner
+# Contributing
 
 ## Copyright and Management
 
@@ -7,22 +7,6 @@ of this project and may steer the development process as he sees fit.
 
 Contributions will be attributed to the author of said code and the copyright will
 remain the author's.
-
-## Coding guidelines
-
-**Testing**
-
-As this is a simple script, unit tests are not required. Tests are done in the
-way of automated gitlab builds.
-
-**Style**
-
-We feel that a unified coding style is important, which is why we require a linter to
-be used. In this case **pycodestyle** is used. Code must pass pycodestyle's default tests.
-
-**Documentation**
-
-The script should be annotated using docstrings and comments where applicable
 
 ## Contributing
 
