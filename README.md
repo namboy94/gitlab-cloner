@@ -1,10 +1,11 @@
 # Gitlab Cloner
 
-[![build status](https://gitlab.namibsun.net/namibsun/python/gitlab-cloner/badges/master/build.svg)](https://gitlab.namibsun.net/namibsun/python/gitlab-cloner/commits/master)
-
+|master|develop|
+|:---:|:---:|
+|[![build status](https://gitlab.namibsun.net/namibsun/python/gitlab-cloner/badges/master/build.svg)](https://gitlab.namibsun.net/namibsun/python/gitlab-cloner/commits/master)|[![build status](https://gitlab.namibsun.net/namibsun/python/gitlab-cloner/badges/develop/build.svg)](https://gitlab.namibsun.net/namibsun/python/gitlab-cloner/commits/develop)|
 ![Logo](resources/logo/logo-readme.png "Logo")
 
-This is a small script that clones all git repositories of a user from a
+This is a program that clones all git repositories of a user from a
 Gitlab server.
 
 This requires the user's API access token.
@@ -16,8 +17,6 @@ one should be the API key.
 
 You can also specify a destination directory for the repositories
 with the ```-d``` argument.
-
-To include any archived repositories, use the ```-a``` option
 
 ## Further Information
 

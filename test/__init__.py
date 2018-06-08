@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """LICENSE
 Copyright 2017 Hermann Krumrey <hermann@krumreyh.com>
 
@@ -17,26 +16,3 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with gitlab-cloner.  If not, see <http://www.gnu.org/licenses/>.
 LICENSE"""
-
-import os
-import argparse
-from gitlab_cloner import clone_all
-
-
-def main():
-    """
-    Retrieves a list of all projects in a gitlab instance and clones them
-    :return: None
-    """
-    parser = argparse.ArgumentParser()
-    parser.add_argument("url", help="The Gitlab URL, including https etc")
-    parser.add_argument("token", nargs="?", default="",
-                        help="The Gitlab Personal Access Token")
-    parser.add_argument("-d", "--destination", default=os.getcwd(),
-                        help="The destination directory.")
-    args = parser.parse_args()
-    clone_all(args.url, args.token, args.destination)
-
-
-if __name__ == "__main__":
-    main()
