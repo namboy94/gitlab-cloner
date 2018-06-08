@@ -1,1 +1,3 @@
-This project currently does not maintain a changelog file.
+V 1.1.0:
+  - Rewrote the program to use oauth for cloning
+  - Program now retrieves all projects accesible to the private token
